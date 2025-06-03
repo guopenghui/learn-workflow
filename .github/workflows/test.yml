@@ -7,6 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display Rust version
-        run: rustc --version
-      - name: Display Cargo version
-        run: cargo --version
+        run: echo ${{ github.event }}
