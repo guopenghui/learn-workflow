@@ -6,5 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Node Version
-        run: node -v
+      - name: Display Rust version
+        run: rustc --version
+      - name: Display Cargo version
+        run: cargo --version
