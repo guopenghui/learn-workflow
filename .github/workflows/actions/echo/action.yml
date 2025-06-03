@@ -1,0 +1,9 @@
+name: echo XX
+description: echo XX environment variable
+
+runs:
+  using: "composite"
+  steps:
+    - name: Display Rust version
+      shell: bash
+      run: echo $XX

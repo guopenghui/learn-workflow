@@ -1,5 +1,8 @@
 name: Test
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -7,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display Rust version
-        run: echo ${{ github.event }}
+        uses: ./.github/workflows/actions/echo
+        env:
+          XX: nihaowa
