@@ -1,9 +1,18 @@
 name: echo XX
 description: echo XX environment variable
+inputs:
+  name:
+    description: "A Name"
+    required: true
+outputs:
+  message:
+    description: "A message"
+    value: ${{ steps.out.outputs.message }}
 
 runs:
   using: "composite"
   steps:
     - name: Display Rust version
+      id: out
       shell: bash
-      run: echo $XX
+      run: echo "message=Hello, ${{ inputs.name }}" >> $GITHUB_OUTPUT

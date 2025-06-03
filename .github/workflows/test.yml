@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Some task
+        id: call
         uses: ./.github/workflows/actions/echo
-        env:
-          XX: nihaowa
+        with:
+          name: "John"
+      - run: echo ${{ steps.call.outputs.message }}
